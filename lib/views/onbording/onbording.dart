@@ -70,7 +70,7 @@ class _OnbordingState extends State<Onbording> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/Home');
+                        Navigator.pushNamed(context, '/Login');
                       })
                   : TextButton(
                       child: Text(

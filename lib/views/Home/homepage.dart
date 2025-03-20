@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:test/widget/flipcard.dart';
 import 'package:test/widget/gridContainer.dart';
 
 class Homepage extends StatefulWidget {
@@ -60,10 +61,15 @@ class _HomepageState extends State<Homepage> {
                                 color: Colors.black,
                               )),
                     SizedBox(width: 8),
-                    Icon(
-                      Icons.qr_code_scanner,
-                      size: 30,
-                      color: Colors.black,
+                    IconButton(
+                      icon: Icon(
+                        Icons.qr_code_scanner,
+                        size: 30,
+                        color: Colors.black,
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/QR');
+                      },
                     ),
                     SizedBox(width: 8),
                     Icon(
@@ -75,23 +81,14 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-            ),
+            DigitalCard(),
             SizedBox(height: 10),
             Text(
               'OUR SERVICES',
               style: GoogleFonts.ptSerif(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-              fontSize: 20,
+                fontSize: 20,
               ),
             ),
             Expanded(
@@ -101,8 +98,8 @@ class _HomepageState extends State<Homepage> {
                 children: [
                   GridContainer(
                     title: 'Buy Ticket',
-                    route: '',
-                    icon: Icons.airplane_ticket,
+                    route: '/Buy',
+                    icon: Icons.train,
                   ),
                   GridContainer(
                     title: 'Map',
