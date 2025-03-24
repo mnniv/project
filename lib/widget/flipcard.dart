@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DigitalCard extends StatelessWidget {
   @override
@@ -10,7 +11,10 @@ class DigitalCard extends StatelessWidget {
       child: FlipCard(
         direction: FlipDirection.HORIZONTAL, // default
         front: Card(
-          color: Colors.grey.shade600,
+          shape: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(18),
+          ),
+          color: Colors.black.withOpacity(0.85),
           elevation: 8,
           child: Container(
             width: screenWidth * 0.77,
@@ -20,39 +24,46 @@ class DigitalCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ListTile(
-                  
-                  title:Text(
-                  'Name: العايش',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ) ,
-                  subtitle: Text(
-                  'N°: 1234 5678 9012 ',
-                  style: TextStyle(fontSize: 16,
-                  color: Colors.grey.shade300,
-                  fontWeight: FontWeight.bold,),
-                ) ,
-                ),
-                
-                
-               
-                SizedBox(height: 20),
                 Text(
-                  'Credit: 5000 \$',
-                  style: TextStyle(fontSize: 25,
-                  color: Colors.grey.shade300,
-                  fontWeight: FontWeight.bold,),
+                  ' \$ 3009.34 ',
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.grey.shade300,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 25),
+                ListTile(
+                  title: Text(
+                    'SITRAM',
+                    style: GoogleFonts.ptSerif(
+                color: Colors.grey.shade300,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+                  ),
+                  subtitle: Text(
+                    'N°: 1234 5678 9012 ',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey.shade700,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  trailing: Image.asset('assets/logo.png'),
                 ),
               ],
             ),
           ),
         ),
         back: Card(
-          color: Colors.grey.shade600,
-
+          shape: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(18),
+          ),
+          color: Colors.black.withOpacity(0.85),
           elevation: 8,
           child: Container(
-             width: screenWidth * 0.77,
+            width: screenWidth * 0.77,
             height: screenHeight * 0.24,
             decoration: BoxDecoration(
               image: DecorationImage(

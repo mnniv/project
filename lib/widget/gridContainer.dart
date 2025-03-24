@@ -20,7 +20,7 @@ class GridContainer extends StatelessWidget {
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.grey.shade900,
+            color: Colors.grey.shade700,
             borderRadius: BorderRadius.circular(25),
           ),
           child: Center(

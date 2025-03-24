@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:test/views/Home/services/buy_ticket.dart';
 import 'package:test/views/Home/homepage.dart';
 import 'package:test/views/Home/services/qrcode_screen.dart';
+import 'package:test/views/Home/services/recharge.dart';
 import 'package:test/views/login.dart';
 import 'package:test/views/onbording/onbording.dart';
 import 'package:test/views/profile.dart';
@@ -26,8 +27,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+    
       debugShowCheckedModeBanner: false,
-      home: Onbording(),
+      home: Homepage(),
      
       routes: {
         '/Home': (context) => Homepage(),
@@ -35,6 +37,8 @@ class _MyAppState extends State<MyApp> {
         '/Buy': (context) => BuyTicket(),
         '/QR': (context) => QrcodeScreen(),
         '/Login': (context) => Login(),
+        '/Recharge': (context) => Recharge(),
+
 
 
         

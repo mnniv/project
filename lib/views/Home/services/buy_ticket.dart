@@ -9,9 +9,12 @@ class BuyTicket extends StatefulWidget {
 }
 
 class _BuyTicketState extends State<BuyTicket> {
+  final TextEditingController _textController = TextEditingController();
+  String _customTicketText =
+      'Custom Ticket'; // Default text for the custom card
+
   @override
   Widget build(BuildContext context) {
-    
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -34,10 +37,10 @@ class _BuyTicketState extends State<BuyTicket> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _buildTicketCard('1 Ticket'),
-                _buildTicketCard('5 Ticket'),
+                _buildTicketCard('5 Tickets'),
               ],
             ),
-           ListTile(
+            ListTile(
               title: const Text(
                 'Custom Buy',
                 style: TextStyle(
@@ -47,57 +50,83 @@ class _BuyTicketState extends State<BuyTicket> {
                 ),
               ),
             ),
-           Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: Colors.black),
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Custom',
-              style: const TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.bold,
-              ),
+            // Custom Buy Card
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 150, // Set a fixed width for consistency
+                    height: 200, // Set a fixed height for consistency
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.black),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          _customTicketText, // Display dynamic text
+                          style: const TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Lottie.asset(
+                          'assets/tram.json',
+                          height: 135,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Lottie.asset(
-              'assets/tram.json',
-              height: 135,
-            ),
-            Container(
-              width: 50,
-              child: TextField(
-                onChanged: (value) {
+            // TextField for Custom Ticket Input
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: 50, // Use full width
+                child: TextField(
+                  controller: _textController,
+                  onChanged: (value) {
+                    setState(() {
+                      // Update the custom ticket text based on input
+                      _customTicketText =
+                          '$value Ticket${value == '1' ? '' : 's'}'; // Handle singular/plural
+                    });
+                  },
+                  keyboardType: TextInputType.number,
+                  maxLength: 2,
+                  decoration: const InputDecoration(
                   
-                },
-                keyboardType: TextInputType.number,
-                maxLength: 1,
-                 decoration: const InputDecoration(
-                labelText: '00',
-                counterText: '', // Hide the counter text
-                border: OutlineInputBorder(),
-              ),
+                    counterText: '', // Hide the counter text
+                    border: OutlineInputBorder(),
+                  ),
+                ),
               ),
             ),
-            SizedBox(height: 10,),
-            TextButton(onPressed: (){}, child: Text(
-              'BUY',
-              style: TextStyle(
-                color: Colors.blue,
-                fontSize: 15,
-                fontWeight: FontWeight.bold
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: TextButton(
+                onPressed: () {
+                  // Implement your buy ticket logic here
+                  print("Buy button pressed for $_customTicketText");
+                },
+                child: Text(
+                  'BUY',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-            ))
-          ],
-        ),
-      ),
-    )
+            ),
           ],
         ),
       ),
@@ -108,6 +137,8 @@ class _BuyTicketState extends State<BuyTicket> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
+        width: 150, // Set a fixed width for consistency
+        height: 200, // Set a fixed height for consistency
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: Colors.white,

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test/widget/flipcard.dart';
@@ -14,6 +15,7 @@ class _HomepageState extends State<Homepage> {
   bool mode = false;
   @override
   Widget build(BuildContext context) {
+    
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade300,
@@ -35,7 +37,7 @@ class _HomepageState extends State<Homepage> {
                     Navigator.pushNamed(context, '/Profile');
                   },
                   icon: Icon(
-                    Icons.person,
+                    CupertinoIcons.person,
                     size: 40,
                     color: Colors.black,
                   ),
@@ -51,12 +53,12 @@ class _HomepageState extends State<Homepage> {
                         },
                         icon: mode
                             ? Icon(
-                                Icons.light_mode,
+                                CupertinoIcons.moon,
                                 size: 30,
                                 color: Colors.black,
                               )
                             : Icon(
-                                Icons.dark_mode,
+                                CupertinoIcons.sun_min,
                                 size: 30,
                                 color: Colors.black,
                               )),
@@ -73,7 +75,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                     SizedBox(width: 8),
                     Icon(
-                      Icons.settings,
+                      CupertinoIcons.settings,
                       size: 30,
                       color: Colors.black,
                     ),
@@ -99,7 +101,7 @@ class _HomepageState extends State<Homepage> {
                   GridContainer(
                     title: 'Buy Ticket',
                     route: '/Buy',
-                    icon: Icons.train,
+                    icon: CupertinoIcons.ticket,
                   ),
                   GridContainer(
                     title: 'Map',
@@ -108,8 +110,8 @@ class _HomepageState extends State<Homepage> {
                   ),
                   GridContainer(
                     title: 'Recharge Card',
-                    route: '',
-                    icon: Icons.abc,
+                    route: '/Recharge',
+                    icon: Icons.payment,
                   ),
                   GridContainer(
                     title: 'Buy Ticket',
