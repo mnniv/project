@@ -14,7 +14,7 @@ class DigitalCard extends StatelessWidget {
           shape: OutlineInputBorder(
             borderRadius: BorderRadius.circular(18),
           ),
-          color: Colors.black.withOpacity(0.85),
+          color: Theme.of(context).primaryColor,
           elevation: 8,
           child: Container(
             width: screenWidth * 0.77,
@@ -28,7 +28,7 @@ class DigitalCard extends StatelessWidget {
                   ' \$ 3009.34 ',
                   style: TextStyle(
                     fontSize: 25,
-                    color: Colors.grey.shade300,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -37,7 +37,7 @@ class DigitalCard extends StatelessWidget {
                   title: Text(
                     'SITRAM',
                     style: GoogleFonts.ptSerif(
-                color: Colors.grey.shade300,
+                color: Theme.of(context).scaffoldBackgroundColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
@@ -60,7 +60,7 @@ class DigitalCard extends StatelessWidget {
           shape: OutlineInputBorder(
             borderRadius: BorderRadius.circular(18),
           ),
-          color: Colors.black.withOpacity(0.85),
+          color: Theme.of(context).primaryColor,
           elevation: 8,
           child: Container(
             width: screenWidth * 0.77,
@@ -68,7 +68,7 @@ class DigitalCard extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                    'assets/logo.png'), // Replace with your tramway image URL
+                    'assets/logo.png'), 
                 fit: BoxFit.none,
               ),
             ),

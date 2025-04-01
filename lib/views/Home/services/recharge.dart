@@ -12,7 +12,7 @@ class Recharge extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey.shade300,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor
       ),
       body: Column(
         children: [
@@ -24,7 +24,7 @@ class Recharge extends StatelessWidget {
             title: Text(
               'Recharge your Card ',
               style: TextStyle(
-                color: Colors.black,
+                
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -42,13 +42,13 @@ class Recharge extends StatelessWidget {
             title: Text(
               'Baridi Mob',
               style: TextStyle(
-                color: Colors.black,
+                
                 fontSize: 20,
               ),
             ),
             leading: Icon(
               CupertinoIcons.money_dollar,
-              color: Colors.black,
+              
               size: 25,
             ),
             trailing: Image.asset('assets/Baridimob.png'),
@@ -60,7 +60,7 @@ class Recharge extends StatelessWidget {
             title: Text(
               'Promos & Offers',
               style: TextStyle(
-                color: Colors.black,
+                
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -364,10 +364,10 @@ class Recharge extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
-      backgroundColor: Colors.grey.shade300,
+      
     ));
   }
 }

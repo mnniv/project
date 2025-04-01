@@ -44,9 +44,9 @@ class _QrcodeScreenState extends State<QrcodeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade300,
+        
         appBar: AppBar(
-         backgroundColor: Colors.grey.shade300,
+         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         ),
         body: Center(
           child: Column(
@@ -55,7 +55,7 @@ class _QrcodeScreenState extends State<QrcodeScreen> {
               MaterialButton(
                 onPressed: scanQR,
                 
-                textColor: Colors.black, 
+                textColor: Theme.of(context).primaryColor, 
                 child: const Text(
                   'Scan',
                   style: TextStyle(
@@ -64,10 +64,11 @@ class _QrcodeScreenState extends State<QrcodeScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20), // Add some space
+               SizedBox(height: 20), // Add some space
               Text(
                 _scanResult,
-                style: const TextStyle(
+                style:  TextStyle(
+                 color: Theme.of(context).primaryColor,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),

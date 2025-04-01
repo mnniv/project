@@ -10,7 +10,7 @@ class Intro2 extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -19,14 +19,15 @@ class Intro2 extends StatelessWidget {
             title: Text(
               'Plan Your Trip',
               style: TextStyle(
-                  color: Colors.black,
+                  
                   fontSize: 40,
                   fontWeight: FontWeight.bold),
             ),
             subtitle: Text(
               'You can explore the locations of tram stations and easily plan your trip.',
               style: TextStyle(
-                color: Colors.grey.shade900,
+                color: Colors.grey.shade700,
+                fontWeight: FontWeight.w400,
                 fontSize: 20,
               ),
             ),

@@ -5,20 +5,20 @@ import 'package:test/widget/flipcard.dart';
 import 'package:test/widget/gridContainer.dart';
 
 class Homepage extends StatefulWidget {
-  const Homepage({super.key});
+  final Function toggleTheme;
+
+  Homepage({super.key, required this.toggleTheme});
 
   @override
   State<Homepage> createState() => _HomepageState();
 }
 
 class _HomepageState extends State<Homepage> {
-  bool mode = false;
   @override
   Widget build(BuildContext context) {
-    
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade300,
+         
         body: Column(
           children: [
             Padding(
@@ -27,7 +27,7 @@ class _HomepageState extends State<Homepage> {
                 title: Text(
                   'Hello Mr',
                   style: TextStyle(
-                    color: Colors.black,
+                    
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -39,35 +39,31 @@ class _HomepageState extends State<Homepage> {
                   icon: Icon(
                     CupertinoIcons.person,
                     size: 40,
-                    color: Colors.black,
+                    
                   ),
                 ),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     IconButton(
-                        onPressed: () {
-                          setState(() {
-                            mode = !mode;
-                          });
-                        },
-                        icon: mode
-                            ? Icon(
-                                CupertinoIcons.moon,
-                                size: 30,
-                                color: Colors.black,
-                              )
-                            : Icon(
-                                CupertinoIcons.sun_min,
-                                size: 30,
-                                color: Colors.black,
-                              )),
+                      onPressed: () {
+                        widget.toggleTheme(); 
+                      },
+                      icon: Icon(
+                        // Use the theme state to determine the icon
+                        Theme.of(context).brightness == Brightness.dark
+                            ? CupertinoIcons.moon
+                            : CupertinoIcons.sun_min,
+                        size: 30,
+                        
+                      ),
+                    ),
                     SizedBox(width: 8),
                     IconButton(
                       icon: Icon(
                         Icons.qr_code_scanner,
                         size: 30,
-                        color: Colors.black,
+                       
                       ),
                       onPressed: () {
                         Navigator.pushNamed(context, '/QR');
@@ -77,7 +73,7 @@ class _HomepageState extends State<Homepage> {
                     Icon(
                       CupertinoIcons.settings,
                       size: 30,
-                      color: Colors.black,
+                     
                     ),
                   ],
                 ),
@@ -88,7 +84,7 @@ class _HomepageState extends State<Homepage> {
             Text(
               'OUR SERVICES',
               style: GoogleFonts.ptSerif(
-                color: Colors.black,
+                
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
@@ -105,18 +101,18 @@ class _HomepageState extends State<Homepage> {
                   ),
                   GridContainer(
                     title: 'Map',
-                    route: '',
+                    route: '/Map',
                     icon: Icons.map,
                   ),
                   GridContainer(
                     title: 'Recharge Card',
-                    route: '/Recharge',
+                    route: '/Demande',
                     icon: Icons.payment,
                   ),
                   GridContainer(
-                    title: 'Buy Ticket',
-                    route: '',
-                    icon: Icons.access_alarms_sharp,
+                    title: 'Customer Service',
+                    route: '/Customer',
+                    icon: Icons.support_agent_rounded,
                   ),
                 ],
               ),

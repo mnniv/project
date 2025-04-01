@@ -10,7 +10,7 @@ class Intro3 extends StatelessWidget {
 
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -19,7 +19,7 @@ class Intro3 extends StatelessWidget {
             title: Text(
               'Digital Ticket',
               style: TextStyle(
-                color: Colors.black,
+                
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
@@ -27,7 +27,8 @@ class Intro3 extends StatelessWidget {
             subtitle: Text(
               'using a digital ticket , there is no more word last ticket',
               style: TextStyle(
-                color: Colors.grey.shade900,
+                color: Colors.grey.shade700,
+                fontWeight: FontWeight.w400,
                 fontSize: 20,
               ),
             ),

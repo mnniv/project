@@ -44,7 +44,7 @@ class _OnbordingState extends State<Onbording> {
                 child: Text(
                   'SKIP',
                   style: TextStyle(
-                    color: onlastpage? Colors.grey.shade300 : Colors.black,
+                    color: onlastpage? Theme.of(context).scaffoldBackgroundColor : Colors.black,
                      fontSize: 20,
                           fontWeight: FontWeight.bold
                   ),
@@ -55,8 +55,8 @@ class _OnbordingState extends State<Onbording> {
                 count: 3,
                 effect: WormEffect(
                   spacing: 16,
-                  dotColor: Colors.grey.shade400,
-                  activeDotColor: Colors.black,
+                  dotColor: Theme.of(context).primaryColor,
+                  activeDotColor: Theme.of(context).scaffoldBackgroundColor,
                 ),
               ),
               onlastpage
@@ -64,19 +64,19 @@ class _OnbordingState extends State<Onbording> {
                       child: Text(
                         'Done',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Theme.of(context).primaryColor,
                           fontSize: 20,
                           fontWeight: FontWeight.bold
                         ),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/Login');
+                        Navigator.pushNamed(context, '/Signup');
                       })
                   : TextButton(
                       child: Text(
                         'Next',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Theme.of(context).primaryColor,
                            fontSize: 20,
                           fontWeight: FontWeight.bold
                         ),

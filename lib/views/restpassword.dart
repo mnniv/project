@@ -8,7 +8,7 @@ class Restpassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      
       appBar: AppBar(
         backgroundColor: Colors.grey.shade300,
       ),

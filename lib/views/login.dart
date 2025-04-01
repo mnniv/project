@@ -7,7 +7,7 @@ class Login extends StatefulWidget {
   State<Login> createState() => _LoginState();
 }
 
-bool obscureText = true;
+bool obscureText = false;
 
 class _LoginState extends State<Login> {
   @override
@@ -17,7 +17,6 @@ class _LoginState extends State<Login> {
 
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.grey.shade300,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -30,14 +29,17 @@ class _LoginState extends State<Login> {
           Padding(
             padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
             child: TextField(
+              keyboardType: TextInputType.number,
+              maxLength: 10,
               onChanged: (value) {},
               decoration: InputDecoration(
                   prefixIcon: Icon(
-                    Icons.person,
+                    Icons.phone,
                   ),
-                  hintText: 'Name',
+                  hintText: 'Phone',
+                  counterText: '',
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: Theme.of(context).scaffoldBackgroundColor,
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20))),
             ),
@@ -48,10 +50,19 @@ class _LoginState extends State<Login> {
               obscureText: obscureText,
               onChanged: (value) {},
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.phone),
-                hintText: 'Phone ',
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                      obscureText ? Icons.visibility : Icons.visibility_off),
+                  onPressed: () {
+                    setState(() {
+                      obscureText = !obscureText;
+                    });
+                  },
+                ),
+                hintText: 'Password ',
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: Theme.of(context).scaffoldBackgroundColor,
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               ),
@@ -71,9 +82,9 @@ class _LoginState extends State<Login> {
                 height: screenHeight * 0.075,
                 child: Center(
                   child: Text(
-                    'Register',
+                    'Login',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                     ),
@@ -81,10 +92,32 @@ class _LoginState extends State<Login> {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.black,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                " don't have an account ?",
+                style: TextStyle(
+                    color: Colors.grey.shade600, fontWeight: FontWeight.bold),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/Signup');
+                },
+                child: Text(
+                  " Register",
+                  style: TextStyle(
+                    color: Colors.blue.shade900,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+            ],
           )
         ],
       ),

@@ -7,7 +7,7 @@ class Signup extends StatefulWidget {
   State<Signup> createState() => _SignupState();
 }
 
-bool obscureText = true;
+bool obscureText = false;
 
 class _SignupState extends State<Signup> {
   @override
@@ -17,14 +17,13 @@ class _SignupState extends State<Signup> {
 
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.grey.shade300,
+     
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Logo
-          Icon(
-            Icons.home,
-            size: 200,
+          Image.asset(
+            "assets/logo.png",
           ),
 
           SizedBox(
@@ -41,7 +40,7 @@ class _SignupState extends State<Signup> {
                   ),
                   hintText: 'Name',
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor:Theme.of(context).scaffoldBackgroundColor,
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20))),
             ),
@@ -55,11 +54,11 @@ class _SignupState extends State<Signup> {
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                   prefixIcon: Icon(
-                    Icons.person,
+                    Icons.phone,
                   ),
-                  hintText: 'Email',
+                  hintText: 'Phone',
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: Theme.of(context).scaffoldBackgroundColor,
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20))),
             ),
@@ -85,7 +84,7 @@ class _SignupState extends State<Signup> {
                 ),
                 hintText: 'Password',
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: Theme.of(context).scaffoldBackgroundColor,
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               ),
@@ -98,24 +97,29 @@ class _SignupState extends State<Signup> {
 
           //Button
 
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-            child: Container(
-              width: screenWidth,
-              height: screenHeight * 0.075,
-              child: Center(
-                child: Text(
-                  'Signup',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/Otp');
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              child: Container(
+                width: screenWidth,
+                height: screenHeight * 0.075,
+                child: Center(
+                  child: Text(
+                    'Register',
+                    style: TextStyle(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.black,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
             ),
           )
@@ -126,13 +130,12 @@ class _SignupState extends State<Signup> {
             children: [
               Text(
                 " have an account ?",
-                style: TextStyle(color: Colors.grey.shade600,
-                fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Colors.grey.shade600, fontWeight: FontWeight.bold),
               ),
               GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, '/Login');
-                  
                 },
                 child: Text(
                   " Login",

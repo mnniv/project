@@ -8,7 +8,7 @@ class Intro1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.grey.shade300,
+     
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,7 +20,7 @@ class Intro1 extends StatelessWidget {
               title: Text(
                 'Validate your ticket by phone',
                 style: TextStyle(
-                  color: Colors.black,
+                  
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                 ),
@@ -28,7 +28,8 @@ class Intro1 extends StatelessWidget {
               subtitle: Text(
                 'You only need your phone to travel by tram.',
                 style: TextStyle(
-                  color: Colors.grey.shade900,
+                  color: Colors.grey.shade700,
+                  fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),

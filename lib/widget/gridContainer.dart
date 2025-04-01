@@ -20,7 +20,7 @@ class GridContainer extends StatelessWidget {
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.grey.shade700,
+            color: Theme.of(context).primaryColor,
             borderRadius: BorderRadius.circular(25),
           ),
           child: Center(
@@ -29,7 +29,7 @@ class GridContainer extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                color: Colors.white,
+                color: Theme.of(context).scaffoldBackgroundColor,
                 size: 50,
               ),
               SizedBox(
@@ -38,7 +38,7 @@ class GridContainer extends StatelessWidget {
               Text(
                 title,
                 style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    TextStyle(color: Theme.of(context).scaffoldBackgroundColor, fontWeight: FontWeight.bold),
               ),
             ],
           )),

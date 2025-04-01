@@ -18,16 +18,16 @@ class _BuyTicketState extends State<BuyTicket> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.grey.shade300,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         ),
-        backgroundColor: Colors.grey.shade300,
+       
         body: ListView(
           children: [
             ListTile(
               title: const Text(
-                'Fast Buy',
+                'Quick Purchase',
                 style: TextStyle(
-                  color: Colors.black,
+                 
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
@@ -42,9 +42,9 @@ class _BuyTicketState extends State<BuyTicket> {
             ),
             ListTile(
               title: const Text(
-                'Custom Buy',
+                'Custom Purchase ',
                 style: TextStyle(
-                  color: Colors.black,
+                 
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
@@ -71,6 +71,7 @@ class _BuyTicketState extends State<BuyTicket> {
                         Text(
                           _customTicketText, // Display dynamic text
                           style: const TextStyle(
+                            color: Colors.black,
                             fontSize: 19,
                             fontWeight: FontWeight.bold,
                           ),
@@ -88,13 +89,14 @@ class _BuyTicketState extends State<BuyTicket> {
             // TextField for Custom Ticket Input
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: 50, // Use full width
+              child: SizedBox(
+                height: 68,
+                width: 64,
                 child: TextField(
                   controller: _textController,
                   onChanged: (value) {
                     setState(() {
-                      // Update the custom ticket text based on input
+                     
                       _customTicketText =
                           '$value Ticket${value == '1' ? '' : 's'}'; // Handle singular/plural
                     });
@@ -103,7 +105,7 @@ class _BuyTicketState extends State<BuyTicket> {
                   maxLength: 2,
                   decoration: const InputDecoration(
                   
-                    counterText: '', // Hide the counter text
+                    counterText: '', 
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -114,12 +116,13 @@ class _BuyTicketState extends State<BuyTicket> {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: TextButton(
                 onPressed: () {
-                  // Implement your buy ticket logic here
+                  
                   print("Buy button pressed for $_customTicketText");
                 },
                 child: Text(
                   'BUY',
                   style: TextStyle(
+                   
                     color: Colors.blue,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -137,8 +140,8 @@ class _BuyTicketState extends State<BuyTicket> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: 150, // Set a fixed width for consistency
-        height: 200, // Set a fixed height for consistency
+        width: 150, 
+        height: 200, 
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -151,6 +154,7 @@ class _BuyTicketState extends State<BuyTicket> {
             Text(
               title,
               style: const TextStyle(
+                color: Colors.black,
                 fontSize: 19,
                 fontWeight: FontWeight.bold,
               ),
