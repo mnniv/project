@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1091995660672",
+    "project_id": "dbproject-b609f",
+    "storage_bucket": "dbproject-b609f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091995660672:android:a47ec804964ad4e10ad165",
+        "android_client_info": {
+          "package_name": "com.example.SETRAM"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091995660672-1cobmnv8oec0cdlibbueu59qjkclq8bh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCktjDc9Moqlqp9KVg2kC2GR8DzVawGeFs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091995660672-1cobmnv8oec0cdlibbueu59qjkclq8bh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
